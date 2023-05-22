@@ -1,0 +1,169 @@
+
+/*========================================
+  Inicialized
+========================================*/
+html,body {
+	margin: 0;
+	padding: 0;
+  width: 100%;
+  height: 100%;
+}
+html { font-size: 62.5%; /* 10px */}
+body {
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  font-feature-settings: "palt";
+  font-family: $font-sans;
+  font-size: 1.4rem;
+  color: $color-text;
+  background-color: $color-contents-body;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  word-break: normal;
+}
+
+/* anchor */
+a {
+  text-decoration: none;
+  color: $color-text-ancher;
+  @include transition(all, 0.2s, ease-in-out, 0s);
+  img {@include transition(all, 0.2s, ease-in-out, 0s);}
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* ul, ol */
+ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* placeholder */
+:placeholder-shown { color:#707070;}
+::-webkit-input-placeholder { color:#707070;}
+::-moz-placeholder { color: #707070; opacity:1;}
+:-ms-input-placeholder { color:#707070;}
+
+
+
+/*========================================
+  workspace
+========================================*/
+.workspace {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6.5rem 0 7rem;
+  height: auto;
+  min-height: 100%;
+  @include flex(column,n,flex-start,n);
+  @media (min-width: 1024px) {
+    padding: 0;
+  }
+  .sideless & {
+    padding-bottom: 0;
+  }
+}
+.cmn_inr {
+  box-sizing: border-box;
+  padding: 0 2.4rem;
+}
+
+
+// frame
+.contents {
+  @include flex(column,nowrap,n,n);
+  flex-grow: 2;
+  width: 100%;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+#side {
+  min-height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 3.6rem;
+  background-color: $color-contents-body;
+
+  @media (min-width: 1024px) {
+    position: relative;
+    width: 36rem;
+    min-width: 36rem;
+    padding-top: 3.6rem;
+    padding-bottom: 3.6rem;
+  }
+}
+#main {
+  flex-grow: 3;
+  min-height: 100%;
+  padding-bottom: 3.6rem;
+  background-color: $color-body;
+  @media (min-width: 1024px) {
+    width: calc(100% - 36rem);
+  }
+}
+.main_header {
+  margin-top: 3.3rem;
+}
+#footer {
+  background-color: $color-body;
+  .footer_side {
+    @include position(fixed, n, n, 0, 0, 0);
+    width: 100%;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    background-color: $color-contents-body;
+  }
+  @media (min-width: 1024px) {
+    .footer_side {
+      width: 36rem;
+      min-width: 36rem;
+      padding-bottom: 3.6rem;
+    }
+  }
+}
+
+
+
+
+/*========================================
+  login
+========================================*/
+#login_header,
+#login_main {
+  width: 100%;
+}
+#login_header {
+  background-color: $color-contents-body;
+}
+
+
+
+/*========================================
+  card
+========================================*/
+.card {
+  @media (min-width: 1024px) {
+    width: 39rem;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+/*========================================
+  mailform
+========================================*/
+.mailform {
+  margin-top: 4rem;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 1024px) {
+    width: 54.8rem;
+  }
+  .form_section {
+    margin-top: 2rem;
+  }
+}

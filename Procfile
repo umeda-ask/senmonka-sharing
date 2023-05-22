@@ -1,0 +1,1 @@
+web: gunicorn senmonka-sharing.wsgi --log-file -

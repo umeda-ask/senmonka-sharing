@@ -1,0 +1,138 @@
+
+////////////////////////////////////////////////
+// SCSS variable
+////////////////////////////////////////////////
+
+// base color
+$color-body: #F5F5F5;   //*body - background*/
+$color-border: #DDD;	//*border*/
+
+$color-text: #000000DE;         //*#000 87%*/
+$color-text-sub: #0000009E;         //*#000 62%*/
+$color-text-ancher: #1040BA;	//*text anchor color*/
+$color-text-ancher-hover: #1040BABF;	//*text anchor color*/
+$color-line: #EEE;            //*line color*/
+
+// error color
+$color-text-error: #BA1044;         //*text color*/
+$color-body-error: #fff;   //*body - background*/
+$color-line-error: #B01C46;            //*line color*/
+
+// button color
+$color-button-text-white: #fff;      //*text color*/
+$color-button-text-black: #000000DE;      //*#000 87%*/
+$color-button-blue: #1040BA;      //*background*/
+$color-button-red: #BA1044;      //*background*/
+$color-button-red-text: #fff;      //*text color*/
+$color-button-white: #fff;      //*background*/
+$color-button-gray:  #00000047;      //*#000 28%*/
+$color-button-black: #000000DE;         //*#000 87%*/
+
+// header color
+$color-header-body-pc: #040818;	//*header - background*/
+$color-header-text-pc: #fff;     //*header - text*/
+
+// contents color
+$color-contents-body: #fff;         //*background*/
+
+// table cell
+$color-th-body: #EEE;     //*background - hover color*/
+$color-td-body: #fff;     //*background - hover color*/
+$color-cell-border: #DDD;	//*background - selected color*/
+
+// dl color
+$color-dl-border: #DDD;  //*form - checkbox・radio color*/
+
+// font
+$font-sans:  'Noto Sans JP','游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$font-serif: 'Noto Serif JP', '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
+$font-roboto: 'Roboto', sans-serif;
+
+
+////////////////////////////////////////////////
+// SCSS @mixin
+////////////////////////////////////////////////
+
+
+// position
+@mixin position($def: relative, $t: auto, $r: auto, $b: auto, $l: auto, $z: 0){
+    @if $def == absolute {
+        position: absolute;
+    } @else if $def == fixed {
+        position: fixed;
+    } @else {
+        position: relative;
+    }
+    @if $t != auto and $t != n { top: $t; }
+    @if $r != auto and $r != n { right: $r };
+    @if $b != auto and $b != n { bottom: $b };
+    @if $l != auto and $l != n { left: $l };
+    @if $z != 0 and $z != n { z-index: $z };
+}
+//ex. @include position(absolute, -20px, n, n, 40px, 9999);
+
+
+// flex
+@mixin flex($fxDirection, $fxWrap, $fxJustify, $fxAlign) {
+    display: flex;
+    @if $fxDirection != n { flex-direction: $fxDirection; } @else { flex-direction: row;}
+    @if $fxWrap != n { flex-wrap: $fxWrap; } @else { flex-wrap: wrap;}
+    @if $fxJustify != n { justify-content: $fxJustify; } @else { justify-content: space-between;}
+    @if $fxAlign != n { align-items: $fxAlign; } @else { align-items: stretch;}
+}
+//ex. @include flex(n, n, n, n); *default
+//ex. @include flex(column, wrap, n, center); *flex-direction:column, flex-wrap:wrap, align-items:center, align-items:center
+
+
+// border-radius
+@mixin round($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+//ex. @include round(5px);
+
+
+// transform
+@mixin transform($tfScale, $tfRotate, $tfTranslateX, $tfTranslateY, $tfSkewX, $tfSkewY) {
+    -webkit-transform: scale($tfScale) rotate($tfRotate) translateX($tfTranslateX) translateY($tfTranslateY) skewX($tfSkewX) skewY($tfSkewY);
+    transform: scale($tfScale) rotate($tfRotate) translateX($tfTranslateX) translateY($tfTranslateY) skewX($tfSkewX) skewY($tfSkewY);
+}
+//ex. @include transform(1, -45deg, -50%, -50%, 0, 0);
+
+@mixin scale($tfScaleX, $tfScaleY) {
+    -webkit-transform: scale($tfScaleX, $tfScaleY);
+    transform: scale($tfScaleX, $tfScaleY);
+}
+@mixin rotate($tfRotate) {
+    -webkit-transform: rotate($tfRotate);
+    transform: rotate($tfRotate);
+}
+@mixin translate($tfTranslateX, $tfTranslateY) {
+    -webkit-transform: translateX($tfTranslateX) translateY($tfTranslateY);
+    transform: translateX($tfTranslateX) translateY($tfTranslateY);
+}
+@mixin skew($tfSkewX, $tfSkewY) {
+    -webkit-transform: skewX($tfSkewX) skewY($tfSkewY);
+    transform: skewX($tfSkewX) skewY($tfSkewY);
+}
+//ex. @include scale(-1, 1); *1が等倍
+//ex. @include rotate(180deg); *deg指定
+//ex. @include translate(50%, -50%); *px指定、または%指定
+//ex. @include skew(45deg, -30deg); *deg指定
+
+
+// transision
+@mixin transition($tsProperty: all, $tsDuration: 0.4s, $tsFunction: ease-in-out, $tsDelay: 0s) {
+    -webkit-transition: $tsProperty $tsDuration $tsFunction $tsDelay;
+    transition: $tsProperty $tsDuration $tsFunction $tsDelay;
+}
+//ex. @include transition(all, 0.2s, ease-in-out, 0.4s);
+
+
+// boxshadow
+@mixin boxshadow($bsOffsetX: 0, $bsOffsetY: 0, $bsBlur: .4rem, $bsSpread: 0, $bsColor: #00000029) {
+    -webkit-box-shadow: $bsOffsetX $bsOffsetY $bsBlur $bsSpread $bsColor;
+    -moz-box-shadow: $bsOffsetX $bsOffsetY $bsBlur $bsSpread $bsColor;
+    box-shadow: $bsOffsetX $bsOffsetY $bsBlur $bsSpread $bsColor;
+}
+//ex. @include boxshadow(0, 0, .4rem, 0, #00000029);

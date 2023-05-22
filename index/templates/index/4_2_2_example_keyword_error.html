@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<title>●●●●●●●●●●●／キーワード検索｜解決事例を検索｜専門家相談サービス</title>
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Roboto:wght@500&display=swap&subset=japanese">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="styles/ress.css">
+<link rel="stylesheet" href="styles/styles.css">
+<link rel="icon" href="images/favicon.ico">
+</head>
+
+<body>
+  <div class="workspace">
+    <!-- ヘッダー -->
+    <header id="header">
+      <div class="cmn_inr">
+        <div class="header_logoset">
+          <figure class="logo-home">
+            <a class="img_logo hover_fade" href="#"><img src="images/logo.svg"></a>
+            <a class="img_home hover_fade" href="#"><img src="images/arrow_l_bl.svg"></a><!-- SP版ナビゲーションアイコンです。homeとそれ以外で画像が変わります -->
+          </figure>
+          <!-- PC版ヘッダーのぱんくず -->
+          <div class="header_title">
+            <h1 class="title">解決事例を検索／キーワード検索／●●●●●●●●●●●</h1>
+          </div>
+        </div>
+        <div class="header_user">
+          <p><a class="hover_fade" href="#">山田株式会社</a> さま</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="contents">
+
+      <!-- サイドバー -->
+      <nav id="side">
+        <div class="cmn_inr">
+          <a class="btn_blue hover_fade" href="#"><img src="images/icon_list.svg">今月のToDoリスト</a>
+          <a class="btn_white hover_fade" href="#"><img src="images/icon_resolve.svg">解決事例を検索</a>
+        </div>
+      </nav>
+
+      <!-- メインコンテンツ開始 -->
+      <main id="main">
+
+        <section class="main_header">
+          <div class="cmn_inr">
+            <div class="main_title">
+              <p class="title_bread">キーワード検索</p><!-- コンテンツのサブタイトル -->
+              <h1 class="title">●●●●●●●●●●●</h1><!-- コンテンツのメインタイトル -->
+            </div>
+            <!-- タイトル横のボタン類 -->
+            <div class="box_btn">
+              <a class="btn_gray btn_back hover_fade" href="#">戻る</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="main_contents">
+
+          <!-- メインコンテンツの内容が入ります。.main_contents_blockが1ブロックとなります。 -->
+          <div class="main_contents_block">
+            <!-- 0件ヒット -->
+            <div class="article_title">
+              <div class="cmn_inr">
+                <p class="title">キーワード該当なし</p>
+              </div>
+            </div>
+          </div>
+          <!-- 検索結果表示用ブロック -->
+          <article class="result_contents result_none"><!-- 0件の場合は .result_none を追加してください -->
+            <div class="contents_text">
+              <div class="contents_text_inr">
+                <div class="contents_text_content">
+                  <div class="result_text">
+                    <!-- 0件コメント -->
+                    <p>ご指定のキーワードが見つかりません<br>別のキーワードを入力いただくか<br>ジャンルから選択して検索してください</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 検索フォーム -->
+          <div class="main_contents_block">
+            <div class="article_title">
+              <div class="cmn_inr">
+                <label class="title" for="form_kw">キーワードで解決事例を検索</label>
+              </div>
+            </div>
+          </div>
+          <div class="cmn_inr">
+            <!-- formここから -->
+            <form method="post" action="#">
+              <!-- パーツが増える場合は1行ごとに .form_parts_section で区切ってください -->
+              <div class="form_parts_section"><!-- エラーがあった場合は .validate を追加してください -->
+                <input id="form_kw" type="text" name="form_kw" value="">
+                <button id="submit" class="btn_blue hover_fade" type="submit" name="submit">検索</button>
+                <!-- <p class="form_message">エラーメッセージ</p> -->
+              </div>
+            </form>
+          </div>
+
+          <!-- リンクブロック -->
+          <div class="main_contents_block">
+            <div class="article_title">
+              <div class="cmn_inr">
+                <h1 class="title">ジャンルから選択</h1>
+              </div>
+            </div>
+            <div class="list_inr list_2col"><!-- 列数は .list_3col のように指定してください。最大3列まで -->
+              <div class="cmn_inr">
+                <a class="list_item hover_fade" href="#">経営・企業法務</a>
+                <a class="list_item hover_fade" href="#">融資・助成金・補助金</a>
+                <a class="list_item hover_fade" href="#">労務・労働雇用</a>
+                <a class="list_item hover_fade" href="#">行政手続き</a>
+                <a class="list_item hover_fade" href="#">経営・企業法務</a>
+              </div>
+            </div>
+          </div>
+            
+        </section>
+        
+      </main>
+
+    </div>
+
+    <!-- サイドバー下部 -->
+    <aside id="footer">
+      <div class="footer_side">
+        <div class="cmn_inr">
+          <a class="btn_red hover_fade" href="#"><img src="images/icon_comment.svg">今すぐ専門家に相談を依頼</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<title>月選択｜ToDoリスト｜専門家相談サービス</title>
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Roboto:wght@500&display=swap&subset=japanese">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="styles/ress.css">
+<link rel="stylesheet" href="styles/styles.css">
+<link rel="icon" href="images/favicon.ico">
+</head>
+
+<body>
+  <div class="workspace">
+    <!-- ヘッダー -->
+    <header id="header">
+      <div class="cmn_inr">
+        <div class="header_logoset">
+          <figure class="logo-home">
+            <a class="img_logo hover_fade" href="#"><img src="images/logo.svg"></a>
+            <a class="img_home hover_fade" href="#"><img src="images/arrow_l_bl.svg"></a><!-- SP版ナビゲーションアイコンです。homeとそれ以外で画像が変わります -->
+          </figure>
+          <!-- PC版ヘッダーのぱんくず -->
+          <div class="header_title">
+            <h1 class="title">ToDoリスト／別の月を見る［月選択］</h1>
+          </div>
+        </div>
+        <div class="header_user">
+          <p><a class="hover_fade" href="#">{{ company_name }}</a> さま</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="contents">
+
+      <!-- サイドバー -->
+      <nav id="side">
+        <div class="cmn_inr">
+          <a class="btn_blue hover_fade" href="#"><img src="images/icon_list.svg">今月のToDoリスト</a>
+          <a class="btn_white hover_fade" href="#"><img src="images/icon_resolve.svg">解決事例を検索</a>
+        </div>
+      </nav>
+
+      <!-- メインコンテンツ開始 -->
+      <main id="main">
+
+        <section class="main_header">
+          <div class="cmn_inr">
+            <div class="main_title">
+              <p class="title_bread">月選択</p><!-- コンテンツのサブタイトル -->
+              <h1 class="title">2022年</h1><!-- コンテンツのメインタイトル -->
+            </div>
+            <!-- タイトル横のボタン類 -->
+            <div class="box_btn">
+              <a class="btn_gray btn_back hover_fade" href="#">戻る</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="main_contents">
+
+          <!-- メインコンテンツの内容が入ります。.main_contents_blockが1ブロックとなります。 -->
+          <div class="main_contents_block">
+
+            <!-- リンクブロック -->
+            <div class="list_inr list_3col"><!-- 列数は .list_3col のように指定してください。最大3列まで -->
+              <div class="cmn_inr">
+                <a class="list_item hover_fade" href="#">1月</a>
+                <a class="list_item hover_fade" href="#">2月</a>
+                <a class="list_item hover_fade" href="#">3月</a>
+                <a class="list_item hover_fade" href="#">4月</a>
+                <a class="list_item hover_fade" href="#">5月</a>
+                <a class="list_item hover_fade" href="#">6月</a>
+                <a class="list_item hover_fade" href="#">7月</a>
+                <a class="list_item hover_fade" href="#">8月</a>
+                <a class="list_item hover_fade" href="#">9月</a>
+                <a class="list_item hover_fade" href="#">10月</a>
+                <a class="list_item hover_fade" href="#">11月</a>
+                <a class="list_item hover_fade" href="#">12月</a>
+              </div>
+            </div>
+          </div>
+            
+        </section>
+        
+      </main>
+
+    </div>
+
+    <!-- サイドバー下部 -->
+    <aside id="footer">
+      <div class="footer_side">
+        <div class="cmn_inr">
+          <a class="btn_red hover_fade" href="#"><img src="images/icon_comment.svg">今すぐ専門家に相談を依頼</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</body>
+
+</html>

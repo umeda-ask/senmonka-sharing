@@ -1,0 +1,84 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<title>完了｜お問い合わせ｜専門家相談サービス</title>
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Roboto:wght@500&display=swap&subset=japanese">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="{% static 'styles/ress.css' %}">
+<link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+<link rel="icon" href="images/favicon.ico">
+</head>
+
+<body class="sideless"><!-- サイドバーなしの場合は .sideless を追加してください -->
+  <div class="workspace">
+    <!-- ヘッダー -->
+    <header id="header">
+      <div class="cmn_inr">
+        <div class="header_logoset">
+          <figure class="logo-home">
+            <a class="img_logo hover_fade" href="/home/"><img src="{% static 'images/logo.svg' %}"></a>
+            <a class="img_home hover_fade" href="/home/"><img src="{% static 'images/arrow_l_bl.svg' %}"></a><!-- SP版ナビゲーションアイコンです。homeとそれ以外で画像が変わります -->
+          </figure>
+          <!-- PC版ヘッダーのぱんくず -->
+          <div class="header_title">
+            <h1 class="title">お問い合わせ 完了</h1>
+          </div>
+        </div>
+        <div class="header_user">
+          <p><a class="hover_fade" href="#">{{ company_name }}</a> さま</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="contents">
+
+      <!-- メインコンテンツ開始 -->
+      <main id="main">
+        <section class="form_finish">
+
+          <div class="main_contents_block form_title">
+            <div class="article_title">
+              <div class="cmn_inr">
+                <p>お問い合わせ</p>
+              </div>
+            </div>
+          </div>
+
+          <article class="main_contents_block">
+            <div class="contents_text">
+              <div class="contents_text_inr">
+                <p class="message">
+                  お問い合わせありがとうございます。1営業日以内にご返信させていただきます。<br>
+                  自動返信メールをお送りしておりますのでご確認ください。<br>
+                  1時間たっても届かない場合はお手数ですがこちらからご連絡ください。
+                </p>
+                <!--以下のメールアドレスは仮のもの。-->>
+                <a href="mailto:senmonkasharing@gmail.com">メールはこちらへ</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="main_contents_block box_btn">
+            <a class="btn_blue hover_fade" href="/home/">ホームに戻る</a>
+          </article>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+</body>
+
+</html>

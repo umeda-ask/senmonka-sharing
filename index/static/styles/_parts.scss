@@ -1,0 +1,106 @@
+/*========================================
+  btn
+========================================*/
+[class^="btn"] {
+  @include flex(n,nowrap,center,center);
+  box-sizing: border-box;
+  padding: 1.5rem 2.6rem;
+  @include round(.4rem);
+  color: $color-button-text-white;
+  text-align: center;
+  img {
+    margin-right: 1.6rem;
+  }
+}
+.btn_blue {
+  background-color: $color-button-blue;
+}
+.btn_white {
+  @include boxshadow(0, 0, .4rem, 0, #00000029);
+  color: $color-button-text-black;
+  background-color: $color-button-white;
+}
+.btn_gray {
+  background-color: $color-button-gray;
+}
+.btn_red {
+  background-color: $color-button-red;
+}
+#main {
+  .main_header{
+    .box_btn {
+      margin-left: 1.2rem;
+    }
+    [class^="btn"] {
+      min-width: 13.6rem;
+      padding-top: .3rem;
+      padding-bottom: .3rem;
+      &.btn_back {
+        display: none;
+      }
+      @media (min-width: 1024px) {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        &.btn_back {
+          display: block;
+        }
+      }
+    }
+
+  }
+  .main_contents_block.box_btn {
+    display: block;
+    a {
+      width: calc((100% - (2.4rem * 2)));
+      margin: 0 auto;
+      @media (min-width: 1024px) {
+        width: calc((100% - (2rem * 2)) / 3);
+      }
+    }
+  }
+}
+
+
+
+/*========================================
+  title
+========================================*/
+.title_bread {
+  margin-bottom: .3rem;
+  color: $color-text;
+  font-size: 1.4rem;
+}
+.title {
+  font-weight: normal;
+  font-size: 2.4rem;
+  text-align: left;
+  .main_contents & {
+    font-size: 1.4rem;
+  }
+  .article_title & {
+    font-size: 1.4rem;
+    color: $color-text-sub;
+  }
+}
+
+
+/*========================================
+  anchor
+========================================*/
+//* fade *//
+.hover_fade {
+  transition: all 0.2s ease-out;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+
+
+/*========================================
+  main - form
+========================================*/
+.require {
+  padding-right: .5rem;
+  color: $color-text-error;
+}

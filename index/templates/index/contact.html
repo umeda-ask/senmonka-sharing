@@ -1,0 +1,146 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<title>お問い合わせ｜専門家相談サービス</title>
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Roboto:wght@500&display=swap&subset=japanese">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="{% static 'styles/ress.css' %}">
+<link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+<link rel="icon" href="images/favicon.ico">
+</head>
+
+<body class="sideless"><!-- サイドバーなしの場合は .sideless を追加してください -->
+  <div class="workspace">
+    <!-- ヘッダー -->
+    <header id="header">
+      <div class="cmn_inr">
+        <div class="header_logoset">
+          <figure class="logo-home">
+            <a class="img_logo hover_fade" href="/home/"><img src="{% static 'images/logo.svg' %}"></a>
+            <a class="img_home hover_fade" href="/home/"><img src="{% static 'images/arrow_l_bl.svg' %}"></a><!-- SP版ナビゲーションアイコンです。homeとそれ以外で画像が変わります -->
+          </figure>
+          <!-- PC版ヘッダーのぱんくず -->
+          <div class="header_title">
+            <h1 class="title">お問い合わせ</h1>
+          </div>
+        </div>
+        <div class="header_user">
+          <p><a class="hover_fade" href="#"> {{company_name}}</a> さま</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="contents">
+
+      <!-- メインコンテンツ開始 -->
+      <main id="main">
+        <section class="mailform">
+          <form method="post" action="/contact_conf/">{% csrf_token %}
+            <div class="cmn_inr">
+
+              <div class="main_contents_block form_title">
+                <div class="article_title">
+                  <p>お問い合わせ</p>
+                </div>
+              </div>
+
+              <div class="main_contents_block">
+
+                <!-- メールフォームは .form_section が1ブロックとなります。 -->
+                <div class="form_section">
+                  <div class="article_title">
+                      <label class="title" for="text"><span class="require">必須</span>会社名</label><!-- 必須テキストには .require を追加してください -->
+                  </div>
+                  <div class="form_parts_section"><!-- エラーがあった場合は .validate を追加してください -->
+                    <input id="text" type="text" name="companyname" value="" placeholder="シェアリング一郎株式会社" required="required">
+                  </div>
+                </div>
+
+                <!-- メールフォームは .form_section が1ブロックとなります。 -->
+                <div class="form_section">
+                  <div class="article_title">
+                      <label class="title" for="text"><span class="require">必須</span>ご担当者様(フルネーム)</label><!-- 必須テキストには .require を追加してください -->
+                  </div>
+                  <div class="form_parts_section"><!-- エラーがあった場合は .validate を追加してください -->
+                    <input id="text" type="text" name="customername" value="" placeholder="シェアリング一郎" required="required">
+                  </div>
+                </div>
+
+                <!-- メールフォームは .form_section が1ブロックとなります。 -->
+                <div class="form_section">
+                  <div class="article_title">
+                      <label class="title" for="text"><span class="require">必須</span>連絡先電話番号</label><!-- 必須テキストには .require を追加してください -->
+                  </div>
+                  <div class="form_parts_section"><!-- エラーがあった場合は .validate を追加してください -->
+                    <input id="text" type="tel" name="phone" value="" placeholder="0312345678" 
+                    pattern="\d{2,4}-?\d{2,4}-?d\{3,4}" maxlength="11"
+                    required/>
+                  </div>
+                </div>
+
+                <!-- メールフォームは .form_section が1ブロックとなります。 -->
+                <div class="form_section">
+                  <div class="article_title">
+                      <label class="title" for="text"><span class="require">必須</span>メールアドレス</label><!-- 必須テキストには .require を追加してください -->
+                  </div>
+                  <div class="form_parts_section"><!-- エラーがあった場合は .validate を追加してください -->
+                    <input id="text" type="email" name="mail" value="" placeholder="example@exmample.com" required="required">
+                  </div>
+                </div>
+
+                <div class="form_section">
+                  <div class="article_title">
+                      <label class="title" for="text"><span class="require">必須</span>相談分野</label><!-- 必須テキストには .require を追加してください -->
+                  </div>
+                  <div class="form_parts_section"><!-- エラーがあった場合は .validate を追加してください -->
+                    <!-- セレクトボックスはこちらのブロックを流用してください -->
+                    <div class="form_select_wrap">
+                      <select id="select" name="genre" required>
+                        <option disabled selected value>選択してください</option><!-- 初期値のvalueは空にしてください -->
+                        <option value="税務">税務</option>
+                        <option value="経営・企業法務">経営・企業法務</option>
+                        <option value="融資・助成金・補助金">融資・助成金・補助金</option>
+                        <option value="労務・労働雇用">労務・労働雇用</option>
+                        <option value="行政手続き">行政手続き</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="form_section">
+                <div class="article_title">
+                    <label class="title" for="text">相談内容</label><!-- 必須テキストには .require を追加してください -->
+                </div>
+                <div class="form_parts_section"><!-- エラーがあった場合は .validate を追加してください -->
+                  <textarea id="textarea" name="consultation" value="" placeholder="ご相談内容を入力してください。"></textarea>
+                </div>
+              </div>
+
+              <div class="form_parts_section">
+                <div class="form_btn_submit">
+                  <button id="submit" class="btn_blue hover_fade" type="submit" name="submit">確認する</button>
+                </div>
+              </div>
+
+            </div>
+
+          </form>
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+</body>
+
+</html>

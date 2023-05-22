@@ -1,0 +1,663 @@
+/*========================================
+  header
+========================================*/
+#header {
+  @include position(fixed, 0px, n, n, 0px, 2);
+  width: 100%;
+  padding: 2.2rem 0;
+  color: $color-text;
+  font-size: 1.6rem;
+  background-color: $color-contents-body;
+  .img_logo {
+    display: none;
+  }
+  .img_home {
+    display: block;
+  }
+  .cmn_inr {
+    @include flex(n,nowrap,n,center);
+  }
+  .header_logoset {
+    @include flex(n,nowrap,n,center);
+  }
+  .header_title {
+    display: none;
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+    text-align: center;
+    .title {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    position: relative;
+    color: $color-header-text-pc;
+    background-color: $color-header-body-pc;
+    .img_logo {
+      display: block;
+    }
+    .img_home {
+      display: none;
+    }
+    .header_title {
+      display: inline;
+      padding-right: 4rem;
+      padding-left: 4rem;
+    }
+    .header_user {
+      a {
+        color: $color-header-text-pc;
+      }
+    }
+    .header_logoset {
+      max-width: 80%;
+    }
+  }
+}
+
+
+
+/*========================================
+  side
+========================================*/
+#side {
+  [class^="btn"]:nth-of-type(n + 2) {
+    margin-top: .8rem;
+  }
+}
+
+
+
+/*========================================
+  main - header
+========================================*/
+.main_header .cmn_inr {
+  @include flex(n,nowrap,n,flex-end);
+  [class^="btn"]:nth-of-type(n + 2) {
+    margin-left: .8rem;
+  }
+}
+
+
+
+/*========================================
+  main - contents
+========================================*/
+.main_contents_block {
+  margin-top: 3.3rem;
+}
+.contents_text {
+  margin-top: .8rem;
+  border: 1px solid $color-border;
+  font-size: 1.6rem;
+  background-color: $color-contents-body;
+}
+.contents_text_inr {
+  margin: 3.2rem 2.4rem;
+  @media (min-width: 1024px) {
+    width: 56rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  & > *:nth-child(n + 2) {
+    margin-top: 2rem;
+  }
+  ul, ol {
+    padding-left: 24px;
+  }
+  ul {
+    list-style: outside disc;
+  }
+  ol {
+    list-style: outside decimal;
+  }
+  dt {
+    font-size: 1.4rem;
+  }
+  dd,
+  blockquote {
+    position: relative;
+    margin-top: .8rem;
+    padding-left: 2rem;
+    &::before {
+      @include position(absolute, 0, n, n, 0, 0);
+      display: block;
+      content: "";
+      width: .8rem;
+      height: 100%;
+      @include round(.4rem);
+      background-color: $color-border;
+    }
+  }
+  table {
+    width: 100%;
+    @include round(.4rem);
+    border-collapse: collapse;
+    box-sizing: border-box;
+    overflow: hidden;
+    outline: .1rem solid $color-border;
+  }
+  tbody:not(:first-child),
+  tfoot:not(:first-child),
+  tr:not(:first-child) {
+    border-top: .1rem solid $color-border;
+  }
+  th, td {
+    padding: .8rem 1.4rem;
+    &:not(:first-child) {
+      border-left: .1rem solid $color-border;
+    }
+  }
+  th {
+    background-color: $color-th-body;
+  }
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+/*========================================
+  main - result
+========================================*/
+.result_header {
+  margin-top: 3.3rem;
+}
+.result_num {
+  color: $color-text-sub;
+}
+.result_contents {
+  a {
+    display: block;
+    &:hover .result_title * {
+      text-decoration: underline;
+    }
+  }
+  .contents_text_inr {
+    @include flex(n,nowrap,n,center);
+  }
+  .result_btn {
+    margin-left: 2rem;
+  }
+  .result_text {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    color: $color-text-sub;
+  }
+}
+.result_none {
+  text-align: center;
+  .contents_text_inr {
+    display: block;
+  }
+}
+
+
+
+/*========================================
+  main - list
+========================================*/
+.list_inr {
+  margin-top: .4rem;
+}
+.list_inr .cmn_inr {
+  @include flex(n,n,n,flex-start);
+  &::after {
+    display: block;
+    content: "";
+  }
+}
+.list_item {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1.4rem 3.2rem 1.4rem 1.6rem;
+  margin-top: .4rem;
+  border: 1px solid $color-border;
+  @include round(.4rem);
+  background-color: $color-contents-body;
+
+  &::after {
+    @include position(absolute, 50%, 1rem, n, n, 0);
+    content: url(../images/arrow_r_bl.svg);
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .list_2col {
+    .list_item {
+      width: calc((100% - 2rem) / 2);
+    }
+    .cmn_inr::after {
+      width: calc((100% - 2rem) / 2);
+    }
+  }
+  .list_3col {
+    .list_item {
+      width: calc((100% - (2rem * 2)) / 3);
+    }
+    .cmn_inr::after {
+      width: calc((100% - (2rem * 2)) / 3);
+    }
+  }
+}
+
+
+
+/*========================================
+  btn
+========================================*/
+.box_btn {
+  @include flex(n,nowrap,n,center);
+}
+
+
+
+/*========================================
+  pagenation
+========================================*/
+.pagenation {
+  .cmn_inr,
+  .pagenation_num ul {
+    @include flex(n,nowrap,n,center);
+  }
+  .pagenation_num {
+    margin: 0 .5rem;
+    @media (min-width: 376px) {
+      margin: 0 2rem;
+    }
+  }
+  li:nth-of-type(n + 2) {
+    margin-left: .4rem;
+  }
+  a, span {
+    display: block;
+    width: 4.8rem;
+    height: 4.8rem;
+    line-height: 1.4rem;
+    box-sizing: border-box;
+    padding: 1.6rem 1rem;
+    @include round(.4rem);
+    color: $color-button-text-white;
+    text-align: center;
+  }
+  a,
+  .pagenation_first a,
+  .pagenation_last a {
+    background-color: $color-button-blue;
+  }
+  .current {
+    background-color: $color-button-black;
+  }
+  .pagenation_first span,
+  .pagenation_last span {
+    background-color: $color-button-gray;
+  }
+  .pagenation_ellipsis {
+    color: $color-button-blue;
+    background-color: transparent;
+  }
+  
+  @media (min-width: 1024px) {
+    .cmn_inr {
+      justify-content: center;
+    }
+  }
+}
+
+
+
+/*========================================
+  main - form
+========================================*/
+.form_title {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+.form_parts_section {
+  @include flex(n,wrap,n,n);
+  margin-top: .8rem;
+  input {
+    box-sizing: border-box;
+    border: 1px solid $color-border;
+    color: $color-text;
+    font-size: 1.6rem;
+    background-color: $color-contents-body;
+    &[type="text"],
+    &[type="email"],
+    &[type="password"] {
+      width: calc(100% - 9.2rem);
+      padding: 1.3rem 1.6rem;
+      border-right: 0;
+      @include round(.4rem 0 0 .4rem);
+      .login_auth &,
+      .mailform & {
+        width: 100%;
+        @include round(.4rem);
+        border: 1px solid $color-border;
+      }
+    }
+    &[type="checkbox"],
+    &[type="radio"] {
+      display: none;
+    }
+  }
+  textarea {
+    width: 100%;
+    height: 12rem;
+    padding: 1.3rem 1.6rem;
+    border: 1px solid $color-border;
+    @include round(.4rem);
+    color: $color-text;
+    font-size: 1.6rem;
+    background-color: $color-contents-body;
+  }
+  .form_select_wrap {
+    position: relative;
+    width: 100%;
+    border: 1px solid $color-border;
+    background-color: $color-contents-body;
+    @include round(.4rem);
+    @media (min-width: 1024px) {
+       width: 34.2rem;
+    }
+    &::after {
+      @include position(absolute, -.1rem, 0, n, n, 0);
+      display: block;
+      width: 4.9rem;
+      height: 4.9rem;
+      border-left: 1px solid $color-border;
+      content: "";
+      background: url(../images/arrow_b_bl.svg) center no-repeat;
+    }
+    select {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 1.3rem 1.6rem;
+      font-size: 1.6rem;
+      option {
+        color: $color-text;
+      }
+    }
+  }
+  .form_list {
+    @include flex(n, n, flex-start, n);
+    font-size: 1.6rem;
+    margin-top: -.7rem;
+    margin-left: -4rem;
+    .form_list_inr {
+      margin-top: .7rem;
+      margin-left: 4rem;
+    }
+    .form_check_label {
+      position: relative;
+      padding-left: 2.1rem;
+      color: $color-text;
+      &::before,
+      &::after {
+        @include position(absolute, 50%, n, n, 0, n);
+        display: block;
+        content: "";
+        width: 1.6rem;
+        height: 1.6rem;
+        @include round(.4rem);
+        @include translate(0, -50%);
+      }
+      &::before {
+        border: 1px solid $color-border;
+        background-color: $color-contents-body;
+      }
+    }
+    input[type="checkbox"] {
+      &:checked + .form_check_label {
+        &::before {
+          background-color: $color-text-ancher;
+        }
+        &::after {
+          @include position(absolute, .8rem, n, n, 0.3rem, n);
+          width: 1rem;
+          height: .5rem;
+          border-left: .2rem solid $color-contents-body;
+          border-bottom: .2rem solid $color-contents-body;
+          @include rotate(-45deg);
+        }
+      }
+    }
+    input[type="radio"] {
+      & + .form_check_label {
+        &::before {
+          @include round(50%);
+        }
+      }
+      &:checked + .form_check_label {
+        &::after {
+          @include position(absolute, 50%, n, n, .3rem, n);
+          width: 1rem;
+          height: 1rem;
+          @include round(50%);
+          background-color: $color-text-ancher;
+          @include translate(0, -50%);
+        }
+      }
+    }
+  }
+  #submit {
+    min-width: 9.2rem;
+    @include round(0 .4rem .4rem 0);
+    padding-right: 3rem;
+    padding-left: 3rem;
+    .login_auth &,
+    .mailform & {
+      width: 100%;
+      @include round(.4rem);
+    }
+  }
+  .form_btn_submit {
+    width: 100%;
+    margin-top: 2.8rem;
+    font-size: 1.6rem;
+    @media (min-width: 1024px) {
+       width: 34.2rem;
+       margin-right: auto;
+       margin-left: auto;
+    }
+    #submit {
+      width: 100%;
+      padding-top: 1.4rem;
+      padding-bottom: 1.3rem;
+    }
+  }
+  &.validate {
+    input,
+    textarea,
+    .form_select_wrap {
+      border-color: $color-line-error;
+      .login_auth &,
+      .mailform &,
+      &::after {
+        border-color: $color-line-error;
+      }
+    }
+  }
+  .validate .form_check_label {
+    &::before {
+      border-color: $color-line-error;
+    }
+  }
+  .form_message {
+    width: 100%;
+    margin-top: .5rem;
+    color: $color-text-error;
+    font-size: 1rem;
+  }
+  .form_confirm {
+    width: 100%;
+    color: $color-text-sub;
+    font-size: 1.6rem;
+    &:not(:first-of-type) {
+      margin-top: .5rem;
+    }
+  }
+}
+.form_finish {
+  @media (min-width: 1024px) {
+    margin-top: 4rem;
+  }
+  .contents_text {
+    font-size: 1.4rem;
+  }
+}
+
+
+
+/*========================================
+  login
+========================================*/
+.login {
+  @include flex(column,nowrap,flex-start,center);
+  width: 100%;
+  min-height: 100vh;
+  background-color: $color-body;
+  #login_logo {
+    padding: 12rem 0;
+    img {
+      display: block;
+      width: 15.2rem;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+  #header {
+    width: 100%;
+    .cmn_inr {
+      display: block;
+    }
+    .header_logoset {
+      width: 100%;
+    }
+    .logo-home {
+      width: auto;
+    }
+    .header_title {
+      display: inline-block;
+      width: 100%;
+      padding-right: 2.4rem;
+    }
+    .title {
+      text-align: center;
+    }
+    @media (min-width: 1024px) {
+      background-color: $color-contents-body;
+      color: $color-text;
+    }
+  }
+  .workspace #header {
+    @media (min-width: 1024px) {
+      .img_logo img {
+          width: 7.6rem;
+          height: auto;
+      }
+      .title {
+        text-align: left;
+      }
+    }
+  }
+  .btn_back {
+    width: 100%;
+  }
+  [class^="btn"] {
+    text-decoration: none;
+  }
+  @media (min-width: 1024px) {
+    .contents_text_inr {
+      width: auto;
+      padding-right: 2.4rem;
+      padding-left: 2.4rem;
+    }
+  }
+}
+.login_inr {
+  padding: 0 2.4rem;
+}
+.login_auth {
+  padding: 2rem 0;
+  background-color: $color-body;
+  
+  @media (min-width: 1024px) {
+    width: 39.2rem;
+    margin: 0 auto;
+  }
+}
+.login_main {
+  @media (min-width: 1024px) {
+    .main_contents {
+      margin-top: 9.3rem;
+    }
+  }
+}
+.auth_contents_section {
+  margin-top: 4rem;
+}
+.auth_contents_block {
+  margin-top: 2rem;
+  @media (min-width: 1024px) {
+    .cmn_inr {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+.auth_contents_inr {
+  padding-right: 2.4rem;
+  padding-left: 2.4rem;
+  @media (min-width: 1024px) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.card {
+  .form_parts_section {
+    input,
+    [class^="btn"] {
+      padding-top: 1.2rem;
+      padding-bottom: 1.3rem;
+    }
+  }
+  .contents_text {
+    input,
+    [class^="btn"] {
+      padding-top: 1.4rem;
+      padding-bottom: 1.4rem;
+    }
+  }
+}
+.login_forget {
+  width: 100%;
+  margin-top: 1.4rem;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.error_textarea,
+.auth_error_message {
+  width: 100%;
+  margin-bottom: 3.3rem;
+  padding: 1.2rem;
+  border-radius: .4rem;
+  border: .1rem solid $color-line-error;
+  color: $color-text-error;
+  font-size: 1.4rem;
+  background-color: $color-body-error;
+}
+.remrmber {
+  .main_contents_block {
+    margin-top: 4rem;
+  }
+}
